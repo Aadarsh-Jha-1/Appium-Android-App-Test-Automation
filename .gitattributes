@@ -1,1 +1,8 @@
+# Force all .java files to be classified as Java
 *.java linguist-language=Java
+
+# Mark HTML and report files as vendor code (ignored in language stats)
+*.html linguist-vendored
+/reports/* linguist-vendored
+
+*.css linguist-vendored
