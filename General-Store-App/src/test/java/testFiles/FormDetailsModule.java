@@ -1,17 +1,34 @@
 package testFiles;
 
+import org.testng.Assert;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import page_Objects.LoginFormPage;
-import utils.Function;
+import page_Objects.ProductsPage;
 
 public class FormDetailsModule extends AppiumServiceController {
 	
-	@Test
+
+	// Test Cases
+	
+	@Test(priority = 1)
+	public void ToastErrorValidation() throws InterruptedException {
+		
+		loginFormPage.clickLetsShopBtn();
+		
+		Thread.sleep(1000);
+		
+		String toastError = loginFormPage.getNameToastError();
+		
+		Assert.assertEquals(toastError,"Please enter your name");
+		
+	}
+	
+	
+	@Test(priority = 2)
 	public void FillForm() throws InterruptedException {
-		
-		LoginFormPage loginFormPage = new LoginFormPage(driver);
-		
+				
 		loginFormPage.selectCountryByName("India");
 		
 		loginFormPage.userName("Test User");
@@ -22,6 +39,9 @@ public class FormDetailsModule extends AppiumServiceController {
 		
 		Thread.sleep(5000);
 		
+		productPage.getPageTitle();
+		
 	}
+	
 
 }

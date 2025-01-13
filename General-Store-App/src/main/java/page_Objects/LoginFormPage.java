@@ -1,7 +1,9 @@
 package page_Objects;
 
+import org.jspecify.annotations.Nullable;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
+import org.testng.Assert;
 
 import io.appium.java_client.AppiumBy;
 import io.appium.java_client.android.AndroidDriver;
@@ -81,4 +83,14 @@ public class LoginFormPage extends Function {
     public void clickLetsShopBtn() {
         letsShopBtn.click();
     }
+    
+    //Locate the error message toast
+    @AndroidFindBy(xpath = "//android.widget.Toast[@text=\"Please enter your name\"]")
+    private WebElement nameToastError;
+    
+    @SuppressWarnings("deprecation")
+	public String getNameToastError() {
+        return nameToastError.getAttribute("name");
+    }
+
 }

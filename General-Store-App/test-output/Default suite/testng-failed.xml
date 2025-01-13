@@ -6,8 +6,8 @@
       <class name="testFiles.FormDetailsModule">
         <methods>
           <include name="FillForm"/>
+          <include name="configureAppium"/>
           <include name="tearDown"/>
-          <include name="ConfigureAppium"/>
         </methods>
       </class> <!-- testFiles.FormDetailsModule -->
     </classes>
