@@ -92,5 +92,18 @@ public class LoginFormPage extends Function {
 	public String getNameToastError() {
         return nameToastError.getAttribute("name");
     }
+    
+    
+    //Navigate To Product Page
+    
+    public void NavigateToProductPage() throws InterruptedException {
+		
+		userName("Test User");
+		
+		clickLetsShopBtn();
+		
+		Thread.sleep(3000);
+		
+	}
 
 }
