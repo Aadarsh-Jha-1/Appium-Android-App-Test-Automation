@@ -81,5 +81,9 @@ public class ProductsPage extends Function {
         return cartBadgeCounter.getAttribute("name");
     }
     
+    public void clickCartBadge() {
+    	cartBadgeCounter.click();
+    }
+    
 
 }

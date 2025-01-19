@@ -5,13 +5,16 @@ import java.net.MalformedURLException;
 import java.net.URI;
 import java.net.URISyntaxException;
 
+import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Test;
 
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.options.UiAutomator2Options;
 import io.appium.java_client.service.local.AppiumDriverLocalService;
 import io.appium.java_client.service.local.AppiumServiceBuilder;
+import page_Objects.CartPage;
 import page_Objects.LoginFormPage;
 import page_Objects.ProductsPage;
 
@@ -23,6 +26,7 @@ public class AppiumServiceController {
     // Page Object declarations
     protected LoginFormPage loginFormPage;
     protected ProductsPage productPage;
+    protected CartPage cartPage;
 
     @BeforeClass
     public void configureAppium() throws MalformedURLException, URISyntaxException, InterruptedException {
@@ -52,7 +56,36 @@ public class AppiumServiceController {
     private void initializePageObjects() {
         loginFormPage = new LoginFormPage(driver);
         productPage = new ProductsPage(driver);
+        cartPage = new CartPage(driver);
     }
+    
+    
+    public void AddToCart() throws InterruptedException {
+    	// Product Names To Be Selected
+    	
+    	String product1 = "Jordan 6 Rings";
+    	
+    	String product2 = "Jordan Lift Off";
+    	
+    	
+    	// Index of Add To Cart Buttons For Specific Products
+    	
+    	int addTocartIndexProd1 = 1;
+    	
+    	int addTocartIndexProd2 = 2;
+    		
+    		loginFormPage.NavigateToProductPage();
+    		
+    		productPage.AddProductToCart(product1,addTocartIndexProd1);
+    		
+    		Thread.sleep(1000);
+    		    		
+    		productPage.AddProductToCart(product2,addTocartIndexProd2);
+    	
+    		Thread.sleep(3000);
+    		
+    	}
+    
 
     @AfterClass
     public void tearDown() {
