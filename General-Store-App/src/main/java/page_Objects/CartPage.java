@@ -65,4 +65,67 @@ public class CartPage extends Function{
     	 // Remove the '$' symbol and convert to float
         return Float.parseFloat(totalPriceString.replace("$", "").trim());
     }
+    
+ 
+    
+    
+    // get E-mails checkbox
+	
+ 	@AndroidFindBy(className = "android.widget.CheckBox")
+     private WebElement subscribeEmailsCheckbox;
+ 	
+ 	public void clickSubscribeEmailsCheckbox() {
+ 		subscribeEmailsCheckbox.click();
+ 	}
+ 	
+ 	public String isCheckBoxChecked() {
+ 		
+ 		return subscribeEmailsCheckbox.getAttribute("checked");
+ 	}
+    
+    
+    // Terms and condition
+    
+    @AndroidFindBy(id = "com.androidsample.generalstore:id/termsButton")
+    private WebElement termsAndConditionLocator;
+    
+	public void getTermsAndConditions() {
+    	
+    	longPressOn(termsAndConditionLocator);
+       
+    }
+	
+	//T&C Page Title
+	 
+	@AndroidFindBy(id = "com.androidsample.generalstore:id/alertTitle")
+    private WebElement termsAndConditionAlertTitle;
+	
+	public String getTermsAndConditionsAlertTitle() {
+		return termsAndConditionAlertTitle.getAttribute("name");
+	}
+    
+	
+	//close T&C Page
+	
+	@AndroidFindBy(id="android:id/button1")
+	private WebElement closePage;
+	
+	public void closeTermsAndConditionAlert() {
+		closePage.click();
+	}
+	
+	
+	
+	
+	//Submit/Proceed Button
+	
+	@AndroidFindBy(id="com.androidsample.generalstore:id/btnProceed")
+	private WebElement proceedButton;
+	
+	public void clickProceedBtn() {
+		
+		proceedButton.click();
+	}
+	
+	
 }
