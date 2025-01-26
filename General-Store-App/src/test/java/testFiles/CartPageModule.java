@@ -7,7 +7,7 @@ public class CartPageModule extends AppiumServiceController {
 	
 	@Test 
 	
-	public void productValidationOnCartPage() throws InterruptedException{
+	public void validationsOnCartPage() throws InterruptedException{
 		
 		AddToCart();
 		
@@ -27,6 +27,25 @@ public class CartPageModule extends AppiumServiceController {
 		float calculatedTotalPrice = cartPage.getProductPrice(0) + cartPage.getProductPrice(1);
 		float onPageTotalPrice = cartPage.getTotalPrice();
 		Assert.assertTrue(calculatedTotalPrice == onPageTotalPrice);
+		
+		//Subscribe To E-mails check-box
+		cartPage.clickSubscribeEmailsCheckbox();
+		Thread.sleep(2000);
+		Assert.assertTrue((cartPage.isCheckBoxChecked()).equals("true"));
+		
+		// Terms and condition alert 
+		cartPage.getTermsAndConditions();
+		Thread.sleep(2000);
+		Assert.assertTrue((cartPage.getTermsAndConditionsAlertTitle()).equals("Terms Of Conditions"));
+		cartPage.closeTermsAndConditionAlert();
+		Thread.sleep(2000);
+		
+		//Click On Proceed Button To Submit
+		
+		cartPage.clickProceedBtn();
+		Thread.sleep(5000);
+		
+		
 		
 	}
 	
