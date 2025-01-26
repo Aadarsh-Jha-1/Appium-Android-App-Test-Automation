@@ -2,24 +2,24 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-01-19T12:48:04 IST" name="Default suite" finished-at="2025-01-19T12:48:35 IST" duration-ms="31047">
+  <suite started-at="2025-01-26T12:13:27 IST" name="Default suite" finished-at="2025-01-26T12:14:12 IST" duration-ms="44628">
     <groups>
     </groups>
-    <test started-at="2025-01-19T12:48:04 IST" name="Default test" finished-at="2025-01-19T12:48:35 IST" duration-ms="31047">
-      <class name="testFiles.ProductPageModule">
-        <test-method is-config="true" signature="configureAppium()[pri:0, instance:testFiles.ProductPageModule@235834f2]" started-at="2025-01-19T12:48:04 IST" name="configureAppium" finished-at="2025-01-19T12:48:19 IST" duration-ms="14838" status="PASS">
+    <test started-at="2025-01-26T12:13:27 IST" name="Default test" finished-at="2025-01-26T12:14:12 IST" duration-ms="44628">
+      <class name="testFiles.CartPageModule">
+        <test-method is-config="true" signature="configureAppium()[pri:0, instance:testFiles.CartPageModule@55182842]" started-at="2025-01-26T12:13:27 IST" name="configureAppium" finished-at="2025-01-26T12:13:41 IST" duration-ms="13918" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- configureAppium -->
-        <test-method signature="addToCart()[pri:3, instance:testFiles.ProductPageModule@235834f2]" started-at="2025-01-19T12:48:19 IST" name="addToCart" finished-at="2025-01-19T12:48:35 IST" duration-ms="15849" status="PASS">
+        <test-method signature="validationsOnCartPage()[pri:0, instance:testFiles.CartPageModule@55182842]" started-at="2025-01-26T12:13:41 IST" name="validationsOnCartPage" finished-at="2025-01-26T12:14:12 IST" duration-ms="30310" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- addToCart -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:testFiles.ProductPageModule@235834f2]" started-at="2025-01-19T12:48:35 IST" name="tearDown" finished-at="2025-01-19T12:48:35 IST" duration-ms="324" status="PASS">
+        </test-method> <!-- validationsOnCartPage -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:testFiles.CartPageModule@55182842]" started-at="2025-01-26T12:14:12 IST" name="tearDown" finished-at="2025-01-26T12:14:12 IST" duration-ms="370" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- testFiles.ProductPageModule -->
+      </class> <!-- testFiles.CartPageModule -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
