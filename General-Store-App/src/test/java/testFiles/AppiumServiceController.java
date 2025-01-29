@@ -77,14 +77,27 @@ public class AppiumServiceController {
     		loginFormPage.NavigateToProductPage();
     		
     		productPage.AddProductToCart(product1,addTocartIndexProd1);
-    		
-    		Thread.sleep(1000);
     		    		
     		productPage.AddProductToCart(product2,addTocartIndexProd2);
     	
     		Thread.sleep(3000);
     		
     	}
+    
+    public void NavigateToBrowserAfterCart() throws InterruptedException {
+    	
+    	AddToCart();
+    	
+    	productPage.clickCartBadge();
+		
+		Thread.sleep(3000);
+    	
+		cartPage.clickSubscribeEmailsCheckbox();
+		
+		cartPage.clickProceedBtn();
+		
+		Thread.sleep(5000);
+    }
     
 
     @AfterClass
