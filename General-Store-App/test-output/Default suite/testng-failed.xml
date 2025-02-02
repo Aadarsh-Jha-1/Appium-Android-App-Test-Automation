@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="testFiles.CartPageModule">
+      <class name="testFiles.WebViewIntraction">
         <methods>
           <include name="configureAppium"/>
           <include name="tearDown"/>
-          <include name="productValidationOnCartPage"/>
+          <include name="HybridAppAutomationFlow"/>
         </methods>
-      </class> <!-- testFiles.CartPageModule -->
+      </class> <!-- testFiles.WebViewIntraction -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

@@ -14,6 +14,7 @@ import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.options.UiAutomator2Options;
 import io.appium.java_client.service.local.AppiumDriverLocalService;
 import io.appium.java_client.service.local.AppiumServiceBuilder;
+import page_Objects.BrowserPage;
 import page_Objects.CartPage;
 import page_Objects.LoginFormPage;
 import page_Objects.ProductsPage;
@@ -27,12 +28,14 @@ public class AppiumServiceController {
     protected LoginFormPage loginFormPage;
     protected ProductsPage productPage;
     protected CartPage cartPage;
+    protected BrowserPage browserPage;
 
     @BeforeClass
     public void configureAppium() throws MalformedURLException, URISyntaxException, InterruptedException {
         // Start Appium service
         service = new AppiumServiceBuilder()
                 .withAppiumJS(new File("C://Users//royal//AppData//Roaming//npm//node_modules//appium//build//lib//main.js"))
+                .withArgument(() -> "--allow-insecure", "chromedriver_autodownload")
                 .withIPAddress("127.0.0.1")
                 .usingPort(4723)
                 .build();
@@ -57,6 +60,7 @@ public class AppiumServiceController {
         loginFormPage = new LoginFormPage(driver);
         productPage = new ProductsPage(driver);
         cartPage = new CartPage(driver);
+        browserPage = new BrowserPage(driver);
     }
     
     
