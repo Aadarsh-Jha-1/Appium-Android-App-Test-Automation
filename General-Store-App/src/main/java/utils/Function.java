@@ -1,5 +1,7 @@
 package utils;
 
+import java.util.Set;
+
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.RemoteWebElement;
@@ -36,5 +38,27 @@ public class Function {
 			));
 			
 		}
+		
+		
+		// switch context
+		
+		public void switchContextTo(String contextName) {
+		    try {
+		        // Get all available contexts
+		        Set<String> contexts = driver.getContextHandles();
+		        System.out.println("Available contexts: " + contexts);
+
+		        // Validate if the requested context is available
+		        if (contexts.contains(contextName)) {
+		            driver.context(contextName);
+		            System.out.println("Switched to context: " + contextName);
+		        } else {
+		            System.out.println("Context '" + contextName + "' not found! Staying in the current context.");
+		        }
+		    } catch (Exception e) {
+		        System.out.println("Error while switching context: " + e.getMessage());
+		    }
+		}
+
 
 }
